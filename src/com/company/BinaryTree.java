@@ -121,7 +121,7 @@ public class BinaryTree<T extends Comparable<T>> implements Iterable<T> {
 
         @Override
         public void remove() {
-            throw new RuntimeException("Operation not supported");
+            throw new UnsupportedOperationException("Operation not supported");
         }
     }
 
