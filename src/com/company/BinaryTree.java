@@ -1,6 +1,7 @@
 package com.company;
 
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 public class BinaryTree<T extends Comparable<T>> implements Iterable<T> {
     private Node root = null;
@@ -110,6 +111,9 @@ public class BinaryTree<T extends Comparable<T>> implements Iterable<T> {
 
         @Override
         public T next() {
+            if(!hasNext()) {
+                throw new NoSuchElementException();
+            }
             T returnValue = currentNode.value;
             currentNode = currentNode.right;
             return returnValue;
